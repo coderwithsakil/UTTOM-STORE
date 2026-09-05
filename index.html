@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>UTTOM STORE - Premium Watches</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        🚚 Free Delivery All Over Bangladesh | 💳 Cash on Delivery
+    </div>
+
+
+    <!-- HEADER -->
+    <header>
+
+        <div class="logo">
+    UTTOM <span>STORE</span>
+</div>
+
+        <div class="search-box">
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search watches..."
+            >
+
+            <button onclick="searchProducts()">🔍</button>
+        </div>
+
+        <div class="header-icons">
+
+            <button>👤</button>
+
+            <button onclick="openCart()">
+                🛒
+                <span id="cartCount">0</span>
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- NAVIGATION -->
+    <nav>
+
+        <a href="#" onclick="filterProducts('all')">
+            Home
+        </a>
+
+        <a href="#" onclick="filterProducts('men')">
+            Men
+        </a>
+
+        <a href="#" onclick="filterProducts('women')">
+            Women
+        </a>
+
+        <a href="#" onclick="filterProducts('couple')">
+            Couple
+        </a>
+
+        <a href="#" onclick="filterProducts('smart')">
+            Smart Watch
+        </a>
+
+        <a href="#" onclick="filterProducts('sale')">
+            🔥 Sale
+        </a>
+
+    </nav>
+
+
+    <!-- HERO -->
+    <section class="hero">
+
+        <div class="hero-text">
+
+            <p class="small-title">
+                PREMIUM COLLECTION
+            </p>
+
+            <h1>
+                TIMELESS<br>
+                <span>STYLE</span>
+            </h1>
+
+            <p>
+                Discover premium watches designed
+                for your everyday style.
+            </p>
+
+            <button
+                class="shop-btn"
+                onclick="scrollToProducts()"
+            >
+                SHOP NOW →
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- CATEGORIES -->
+    <section class="categories">
+
+        <h2>
+            Shop By Category
+        </h2>
+
+        <div class="category-container">
+
+            <div
+                class="category"
+                onclick="filterProducts('men')"
+            >
+                <div class="category-icon">
+                    ⌚
+                </div>
+
+                <h3>
+                    Men's Watches
+                </h3>
+
+                <p>
+                    Premium watches for men
+                </p>
+            </div>
+
+
+            <div
+                class="category"
+                onclick="filterProducts('women')"
+            >
+                <div class="category-icon">
+                    💎
+                </div>
+
+                <h3>
+                    Women's Watches
+                </h3>
+
+                <p>
+                    Elegant & beautiful
+                </p>
+            </div>
+
+
+            <div
+                class="category"
+                onclick="filterProducts('couple')"
+            >
+                <div class="category-icon">
+                    💑
+                </div>
+
+                <h3>
+                    Couple Watches
+                </h3>
+
+                <p>
+                    Perfect pair for couples
+                </p>
+            </div>
+
+
+            <div
+                class="category"
+                onclick="filterProducts('smart')"
+            >
+                <div class="category-icon">
+                    ⌚
+                </div>
+
+                <h3>
+                    Smart Watches
+                </h3>
+
+                <p>
+                    Smart lifestyle
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PRODUCTS -->
+    <section
+        class="products-section"
+        id="products"
+    >
+
+        <div class="section-title">
+
+            <div>
+
+                <p>
+                    OUR COLLECTION
+                </p>
+
+                <h2>
+                    Featured Watches
+                </h2>
+
+            </div>
+
+            <button
+                onclick="filterProducts('all')"
+                class="view-all"
+            >
+                View All →
+            </button>
+
+        </div>
+
+
+        <div
+            class="product-grid"
+            id="productGrid"
+        >
+
+
+            <!-- PRODUCT 1 -->
+            <div
+                class="product-card"
+                data-category="men"
+                onclick="openProduct(1)"
+            >
+
+                <div class="discount">
+                    -20%
+                </div>
+
+                <div class="product-image">
+
+                    <div class="watch-placeholder">
+                        ⌚
+                    </div>
+
+                </div>
+
+                <div class="product-info">
+
+                    <p class="category-name">
+                        Men's Watch
+                    </p>
+
+                    <h3>
+                        Luxury Black Watch
+                    </h3>
+
+                    <div class="rating">
+                        ⭐⭐⭐⭐⭐
+                    </div>
+
+                    <div class="price">
+
+                        <span class="old-price">
+                            ৳1,500
+                        </span>
+
+                        <span class="new-price">
+                            ৳1,199
+                        </span>
+
+                    </div>
+
+                    <button
+                        class="order-btn"
+                        onclick="event.stopPropagation(); addToCart('Luxury Black Watch',1199)"
+                    >
+                        ADD TO CART
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 2 -->
+            <div
+                class="product-card"
+                data-category="men sale"
+                onclick="openProduct(2)"
+            >
+
+                <div class="discount">
+                    -25%
+                </div>
+
+                <div class="product-image">
+
+                    <div class="watch-placeholder">
+                        ⌚
+                    </div>
+
+                </div>
+
+                <div class="product-info">
+
+                    <p class="category-name">
+                        Men's Watch
+                    </p>
+
+                    <h3>
+                        Classic Silver Watch
+                    </h3>
+
+                    <div class="rating">
+                        ⭐⭐⭐⭐⭐
+                    </div>
+
+                    <div class="price">
+
+                        <span class="old-price">
+                            ৳2,000
+                        </span>
+
+                        <span class="new-price">
+                            ৳1,499
+                        </span>
+
+                    </div>
+
+                    <button
+                        class="order-btn"
+                        onclick="event.stopPropagation(); addToCart('Classic Silver Watch',1499)"
+                    >
+                        ADD TO CART
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 3 -->
+            <div
+                class="product-card"
+                data-category="women"
+                onclick="openProduct(3)"
+            >
+
+                <div class="discount">
+                    -30%
+                </div>
+
+                <div class="product-image">
+
+                    <div class="watch-placeholder">
+                        💎
+                    </div>
+
+                </div>
+
+                <div class="product-info">
+
+                    <p class="category-name">
+                        Women's Watch
+                    </p>
+
+                    <h3>
+                        Elegant Rose Gold
+                    </h3>
+
+                    <div class="rating">
+                        ⭐⭐⭐⭐⭐
+                    </div>
+
+                    <div class="price">
+
+                        <span class="old-price">
+                            ৳2,500
+                        </span>
+
+                        <span class="new-price">
+                            ৳1,749
+                        </span>
+
+                    </div>
+
+                    <button
+                        class="order-btn"
+                        onclick="event.stopPropagation(); addToCart('Elegant Rose Gold',1749)"
+                    >
+                        ADD TO CART
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 4 -->
+            <div
+                class="product-card"
+                data-category="couple sale"
+                onclick="openProduct(4)"
+            >
+
+                <div class="discount">
+                    -35%
+                </div>
+
+                <div class="product-image">
+
+                    <div class="watch-placeholder">
+                        💑
+                    </div>
+
+                </div>
+
+                <div class="product-info">
+
+                    <p class="category-name">
+                        Couple Watch
+                    </p>
+
+                    <h3>
+                        Couple Classic Set
+                    </h3>
+
+                    <div class="rating">
+                        ⭐⭐⭐⭐⭐
+                    </div>
+
+                    <div class="price">
+
+                        <span class="old-price">
+                            ৳3,500
+                        </span>
+
+                        <span class="new-price">
+                            ৳2,299
+                        </span>
+
+                    </div>
+
+                    <button
+                        class="order-btn"
+                        onclick="event.stopPropagation(); addToCart('Couple Classic Set',2299)"
+                    >
+                        ADD TO CART
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 5 -->
+            <div
+                class="product-card"
+                data-category="smart"
+                onclick="openProduct(5)"
+            >
+
+                <div class="discount">
+                    -15%
+                </div>
+
+                <div class="product-image">
+
+                    <div class="watch-placeholder">
+                        ⌚
+                    </div>
+
+                </div>
+
+                <div class="product-info">
+
+                    <p class="category-name">
+                        Smart Watch
+                    </p>
+
+                    <h3>
+                        Smart Pro Watch
+                    </h3>
+
+                    <div class="rating">
+                        ⭐⭐⭐⭐⭐
+                    </div>
+
+                    <div class="price">
+
+                        <span class="old-price">
+                            ৳3,000
+                        </span>
+
+                        <span class="new-price">
+                            ৳2,549
+                        </span>
+
+                    </div>
+
+                    <button
+                        class="order-btn"
+                        onclick="event.stopPropagation(); addToCart('Smart Pro Watch',2549)"
+                    >
+                        ADD TO CART
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 6 -->
+            <div
+                class="product-card"
+                data-category="men"
+                onclick="openProduct(6)"
+            >
+
+                <div class="discount">
+                    -18%
+                </div>
+
+                <div class="product-image">
+
+                    <div class="watch-placeholder">
+                        ⌚
+                    </div>
+
+                </div>
+
+                <div class="product-info">
+
+                    <p class="category-name">
+                        Men's Watch
+                    </p>
+
+                    <h3>
+                        Premium Steel Watch
+                    </h3>
+
+                    <div class="rating">
+                        ⭐⭐⭐⭐⭐
+                    </div>
+
+                    <div class="price">
+
+                        <span class="old-price">
+                            ৳2,800
+                        </span>
+
+                        <span class="new-price">
+                            ৳2,299
+                        </span>
+
+                    </div>
+
+                    <button
+                        class="order-btn"
+                        onclick="event.stopPropagation(); addToCart('Premium Steel Watch',2299)"
+                    >
+                        ADD TO CART
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FEATURES -->
+    <section class="features">
+
+        <div>
+            <span>🚚</span>
+            <h3>Fast Delivery</h3>
+            <p>Delivery all over Bangladesh</p>
+        </div>
+
+        <div>
+            <span>💳</span>
+            <h3>Cash On Delivery</h3>
+            <p>Pay after receiving product</p>
+        </div>
+
+        <div>
+            <span>🔒</span>
+            <h3>Secure Shopping</h3>
+            <p>Your information is safe</p>
+        </div>
+
+        <div>
+            <span>📞</span>
+            <h3>Customer Support</h3>
+            <p>We're here to help</p>
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="footer-logo">
+            UTTOM STORE
+        </div>
+
+        <p>
+            Premium watches at affordable prices.
+        </p>
+
+        <div class="footer-links">
+
+            <a href="#">
+                About Us
+            </a>
+
+            <a href="#">
+                Contact
+            </a>
+
+            <a href="#">
+                Privacy Policy
+            </a>
+
+            <a href="#">
+                Return Policy
+            </a>
+
+        </div>
+
+        <p class="copyright">
+            © 2026 UTTOM STORE. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- PRODUCT DETAILS MODAL -->
+    <div
+        id="productModal"
+        class="product-modal"
+    >
+
+        <div class="product-detail-box">
+
+            <button
+                class="close-product"
+                onclick="closeProduct()"
+            >
+                ×
+            </button>
+
+
+            <div class="detail-image">
+
+                <div
+                    id="detailEmoji"
+                    class="detail-watch"
+                >
+                    ⌚
+                </div>
+
+            </div>
+
+
+            <div class="detail-info">
+
+                <p
+                    id="detailCategory"
+                    class="detail-category"
+                >
+                    Men's Watch
+                </p>
+
+                <h2 id="detailName">
+                    Luxury Black Watch
+                </h2>
+
+                <div
+                    id="detailRating"
+                    class="detail-rating"
+                >
+                    ⭐⭐⭐⭐⭐
+                </div>
+
+                <div class="detail-price">
+
+                    <span
+                        id="detailOldPrice"
+                        class="old-price"
+                    >
+                        ৳1,500
+                    </span>
+
+                    <span
+                        id="detailPrice"
+                        class="new-price"
+                    >
+                        ৳1,199
+                    </span>
+
+                </div>
+
+
+                <p
+                    id="detailDescription"
+                    class="detail-description"
+                >
+                    Premium quality watch with a stylish
+                    design. Perfect for everyday use,
+                    office and special occasions.
+                </p>
+
+
+                <div class="quantity-box">
+
+                    <button onclick="changeQuantity(-1)">
+                        −
+                    </button>
+
+                    <span id="quantity">
+                        1
+                    </span>
+
+                    <button onclick="changeQuantity(1)">
+                        +
+                    </button>
+
+                </div>
+
+
+                <div class="detail-buttons">
+
+                    <button
+                        class="detail-cart-btn"
+                        onclick="addDetailToCart()"
+                    >
+                        🛒 ADD TO CART
+                    </button>
+
+                    <button
+                        class="detail-order-btn"
+                        onclick="orderNow()"
+                    >
+                        ⚡ ORDER NOW
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- CART MODAL -->
+    <div
+        id="cartModal"
+        class="cart-modal"
+    >
+
+        <div class="cart-box">
+
+            <button
+                class="close-cart"
+                onclick="closeCart()"
+            >
+                ×
+            </button>
+
+            <h2>
+                🛒 Your Cart
+            </h2>
+
+            <div id="cartItems"></div>
+
+            <div class="cart-total">
+
+                Total: ৳<span id="cartTotal">
+                    0
+                </span>
+
+            </div>
+
+            <button
+                class="checkout-btn"
+                onclick="checkout()"
+            >
+                ORDER ON WHATSAPP
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+</html>
